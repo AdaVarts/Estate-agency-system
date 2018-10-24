@@ -1,0 +1,70 @@
+﻿<Window x:Class="WpfApp1.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="350" Width="700">
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="30, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16">Title</TextBlock>
+            <TextBox Margin="10,0" Name="titleTxtBox" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="30, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16">Image</TextBlock>
+            <TextBox Margin="10,0" Name="imageTxtBox" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="30, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16">Number</TextBlock>
+            <TextBox Margin="10,0" Name="numberTxtBox" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="60, 0, 0, 0" HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" FontSize="16">Floor</TextBlock>
+            <TextBox Margin="10,0" Name="floorTxtBox" Grid.Column="3" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="30, 0, 0, 0" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" FontSize="16">Rooms</TextBlock>
+            <TextBox Margin="10,0" Name="roomsTxtBox" Grid.Row="1" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="60, 0, 0, 0" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" FontSize="16">Size</TextBlock>
+            <TextBox Margin="10,0" Name="sizeTxtBox" Grid.Row="1" Grid.Column="3" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{DynamicResource txtBlock}" Margin="30, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16">Price</TextBlock>
+            <TextBox Margin="10,0" Name="priceTxtBox" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center"></TextBox>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="saveBtn" Style="{DynamicResource btn}" Margin="30,10" FontSize="16" Click="saveBtn_Click">Save</Button>
+            <Button Name="cancelBtn" Style="{DynamicResource btn}" Margin="30,10" FontSize="16" Grid.Column="1" Click="cancelBtn_Click">Cancel</Button>
+        </Grid>
+    </Grid>
+</Window>

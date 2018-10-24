@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="grid1" Background="GhostWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Name="userName" FontWeight="Black" Foreground="#FF2967DC" FontSize="20" Margin="0,20,0,20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Viner Hand ITC"/>
+            <Button Grid.Row="1" Click="statisticBtn_Click" HorizontalContentAlignment="Center" Style="{DynamicResource btn}" Margin="10,20">Statistic</Button>
+            <ListView Background="GhostWhite" Grid.Row="2" Name="soldFlatsList" Visibility="Hidden" Margin="10,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding Path=Rooms}">Rooms</GridViewColumn>
+                        <GridViewColumn Width="75" DisplayMemberBinding="{Binding Path=Price}">Total</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Grid.Row="3" Name="exitBtn" Click="exitBtn_Click" Style="{DynamicResource btn}" Margin="20,15,20,20">Exit</Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.8*"/>
+                <ColumnDefinition Width="1.1*"/>
+            </Grid.ColumnDefinitions>
+            <ListView Background="GhostWhite" Name="flatList" MouseDoubleClick="flatList_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=id}">Id</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=title}">Title</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=number}">Number</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Price</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=size}">Size</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=rooms}">Rooms</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=floor}">Floor</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Grid.Column="1">
+                <TextBlock Foreground="#FF1B3B78" FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,10" FontWeight="Bold">Parameters</TextBlock>
+                <TextBlock Style="{DynamicResource txtBlock}" HorizontalAlignment="Left" Margin="15,0,0,5">Price</TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0,0,13,15">
+                    <TextBox x:Name="lowestPriceTxtBox" Width="91" Padding="0" Margin="15,0,5,0" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{DynamicResource txtBlock}"> -</TextBlock>
+                    <TextBox Name="highestTxtBox" Width="90" Margin="5,0,0,0" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,13,15">
+                    <TextBlock Style="{DynamicResource txtBlock}" Width="70" HorizontalAlignment="Left" Margin="15,0,0,0">Size</TextBlock>
+                    <TextBox Name="sizeTxtBox" Width="126" Margin="0,0,15,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,13,15">
+                    <TextBlock Style="{DynamicResource txtBlock}" Width="70" HorizontalAlignment="Left" Margin="15,0,0,0">Rooms</TextBlock>
+                    <TextBox Name="roomsTxtBox" Width="126"/>
+                </StackPanel>
+                <Button x:Name="applyBtn" Height="30" Margin="20,10,20,20" Click="applyBtn_Click" Content="Apply" Style="{DynamicResource btn}"/>
+                <RadioButton Style="{DynamicResource radBtn}" Name="IsAvailableRadBtn" Margin="15,5,0,15" Checked="IsAvailableRadBtn_Checked">Available</RadioButton>
+                <RadioButton Style="{DynamicResource radBtn}" Name="IsBookingRadBtn" Margin="15,0,0,15" Checked="IsBookingRadBtn_Checked">Booking</RadioButton>
+                <RadioButton Style="{DynamicResource radBtn}" Name="IsSoldRadBtn" Margin="15,0,0,15" Checked="IsSoldRadBtn_Checked">Sold</RadioButton>
+                <Button x:Name="resetBtn" Margin="20,10,20,0" Click="resetBtn_Click" Content="Reset" Style="{DynamicResource btn}"/>
+                <Button x:Name="newBtn" Margin="20,25,20,0" Content="Create new" Visibility="Hidden" Click="newBtn_Click" Style="{DynamicResource btn}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>

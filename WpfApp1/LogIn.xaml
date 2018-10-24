@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="LogIn" Height="294" Width="370">
+    <StackPanel VerticalAlignment="Center" Margin="50,0">
+        <TextBlock Style="{DynamicResource txtBlock}" FontStyle="Normal" Text="User" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <ComboBox Foreground="#FF1B3B78" Name="comboBox"/>
+        <TextBlock Style="{DynamicResource txtBlock}" FontStyle="Normal" Text="Password" HorizontalAlignment="Center" FontSize="16" Margin="0,10,0,10"/>
+        <PasswordBox Name="passwordTxt" Margin="0,0,0,30"/>
+        <Button Style="{DynamicResource btn}" Content="Next" FontSize="16" HorizontalAlignment="Center" Width="100" Click="Button_Click"/>
+    </StackPanel>
+</Window>
